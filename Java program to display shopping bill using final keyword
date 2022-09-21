@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class finalkeyword {
+
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        int no, billno;
+        double price, dis, net, qty, total, taxamt, disamt;
+        String prdt;
+        final int tax;
+       
+        System.out.println("Enter the product name:");
+        prdt = s.nextLine();
+       
+        System.out.println("Enter the bill no:");
+        billno = s.nextInt();
+
+        System.out.println("Enter the serial no:");
+        no = s.nextInt();
+
+        System.out.println("Enter the quantity:");
+        qty = s.nextFloat();
+        
+        System.out.println("Enter the discount amount:");
+        dis = s.nextFloat();
+
+        System.out.println("Enter the price:");
+        price = s.nextFloat();
+
+        System.out.println("Enter the tax percentage:");
+        tax = s.nextInt();
+
+        
+        taxamt = price * tax / (100);
+        disamt = price * dis / (100);
+        total = price + taxamt;
+        net = total - disamt;
+
+        System.out.println("\n\n********************************************");
+        System.out.println("Margin free market:");
+        System.out.println("*****************************************");
+
+        System.out.println("Slno\tProduct\t Quantity\ttax\tprice");
+        System.out.println("---------------------------------------------");
+        System.out.println("" + no + "\t" + prdt + "\t " + qty + "\t \t" + tax + "\t" + price + "");
+        System.out.println("---------------------------------------------");
+        System.out.println("Total amt:" + total);
+        System.out.println("Discount amt:" + disamt);
+        System.out.println("Grand total:" + net);
+        System.out.println("*****************************************");
+
+    }
+
+}
+//OUTPUT OF THE CODE
+Enter the product name:
+SUGAR
+Enter the bill no:
+1
+Enter the serial no:
+1
+Enter the quantity:
+2
+Enter the discount amount:
+10
+Enter the price:
+100
+Enter the tax percentage:
+20
+
+
+*****************************************
+Margin free market:
+*****************************************
+Slno	Product	 Quantity	tax	price
+-------------------------------------------
+1	SUGAR	 2.0	 	20	100.0
+-------------------------------------------
+Total amt:120.0
+Discount amt:10.0
+Grand total:110.0
+*****************************************
